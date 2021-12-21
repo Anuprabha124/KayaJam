@@ -1,0 +1,137 @@
+body {
+  font-family: $font;
+  background-color: var(--color-default);
+  color: var(--color-text);
+}
+
+/* Block */
+.btn {
+  color: white;
+  border: none;
+  /* remove focus */
+  outline: none !important;
+  box-shadow: none !important;
+  /* for overflow */
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center !important;
+
+  &:hover {
+    color: white;
+    opacity: 0.9;
+  }
+
+  /* Elements */
+  &__search {
+    all: unset;
+    width: 44px;
+    font-weight: bold;
+    color: black;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &__toggle {
+    all: unset;
+    color: white;
+    margin: 0 2px;
+    padding: 2px 10px;
+    border-radius: 50px;
+    background-color: #2f4f4f;
+
+    &:hover {
+      background-color: lightgrey;
+    }
+
+    &.active {
+      background-color: darkgrey;
+      color: white;
+    }
+  }
+
+  /* Modifiers */
+  &--radio:hover {
+    opacity: 1 !important;
+  }
+
+  &--brand {
+    background-color: map-get($colors-brands, spotify);
+  }
+
+  &--facebook {
+    background-color: map-get($colors-brands, facebook);
+  }
+
+  &--twitter {
+    background-color: map-get($colors-brands, twitter);
+  }
+
+  &--telegram {
+    background-color: map-get($colors-brands, telegram);
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
+
+  /* adapted from: https://codepen.io/RRoberts/pen/jVOWEQ */
+  a {
+    width: 30px;
+    height: 5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    background-color: rgba(46, 204, 113, 0.4);
+
+    &.active {
+      background-color: map-get($colors-brands, spotify);
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: map-get($colors-brands, spotify);
+
+  &:hover {
+    color: map-get($colors-brands, spotify);
+  }
+}
+
+/* if <a> color not brand */
+.tag {
+  color: var(--color-text);
+
+  &:hover {
+    color: map-get($colors-brands, spotify) !important;
+  }
+}
+
+.dropdown-item {
+  &.active,
+  &:active {
+    background-color: map-get($colors-brands, spotify);
+  }
+}
+
+/* reference: https://www.w3schools.com/howto/howto_css_custom_scrollbar.asp */
+::-webkit-scrollbar {
+  width: 5px;
+
+  /* Handle */
+  &-thumb {
+    background: #888;
+
+    &:hover {
+      background: #555;
+    }
+  }
+}
+
+body::-webkit-scrollbar-track {
+  margin-bottom: 80px; /* bottom player */
+}
